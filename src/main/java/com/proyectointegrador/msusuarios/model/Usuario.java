@@ -42,4 +42,12 @@ public class Usuario {
     public void setClave(String clave) {
         this.clave = clave;
     }
+
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
 }
