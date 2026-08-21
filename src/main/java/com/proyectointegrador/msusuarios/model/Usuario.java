@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import validation.CelularValido;
 import validation.DocumentoValido;
+import validation.MayorDeEdad;
 
 import java.time.LocalDate;
 
@@ -20,6 +21,7 @@ public class Usuario {
     private String documentoDeIdentidad;
     @CelularValido
     private String celular;
+    @MayorDeEdad
     private LocalDate fechaNacimiento;
     @Email
     private String correo;
