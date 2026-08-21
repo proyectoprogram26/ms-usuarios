@@ -12,19 +12,34 @@ import java.time.LocalDate;
 
 @Entity
 public class Usuario {
+
     @Id
     @GeneratedValue
     private Long id;
+
     private String nombre;
     private String apellido;
+
     @DocumentoValido
     private String documentoDeIdentidad;
+
     @CelularValido
     private String celular;
+
     @MayorDeEdad
     private LocalDate fechaNacimiento;
+
     @Email
     private String correo;
+
     private String clave;
     private Rol rol;
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
 }
