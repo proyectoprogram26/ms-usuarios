@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
+import validation.CelularValido;
 
 import java.time.LocalDate;
 
@@ -15,6 +16,7 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String documentoDeIdentidad;
+    @CelularValido
     private String celular;
     private LocalDate fechaNacimiento;
     @Email
