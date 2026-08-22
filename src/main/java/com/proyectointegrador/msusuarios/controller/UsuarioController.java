@@ -20,7 +20,12 @@ public class UsuarioController {
     }
 
     @PostMapping("/propietario")
-    public ResponseEntity<Usuario> crearPropietario(@Valid @RequestBody Usuario usuario) {
-        return ResponseEntity.ok(usuarioService.guardarUsuario(usuario));
+    public ResponseEntity<?> crearPropietario(@Valid @RequestBody Usuario usuario) {
+        try {
+            Usuario nuevoUsuario = usuarioService.guardarUsuario(usuario);
+            return ResponseEntity.ok(nuevoUsuario);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 }
