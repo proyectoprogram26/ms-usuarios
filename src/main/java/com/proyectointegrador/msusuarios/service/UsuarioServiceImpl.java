@@ -21,10 +21,13 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public Usuario guardarUsuario(Usuario usuario) {
+        if (usuarioRepository.findByCorreo(usuario.getCorreo()).isPresent()) {
+            throw new IllegalArgumentException("Ya existe un usuario registrado con ese correo");
+        }
+
         String claveEncriptada = passwordEncoder.encode(usuario.getClave());
         usuario.setClave(claveEncriptada);
         usuario.setRol(Rol.PROPIETARIO);
-
         return usuarioRepository.save(usuario);
     }
 }

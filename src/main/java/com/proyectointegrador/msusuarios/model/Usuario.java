@@ -31,8 +31,10 @@ public class Usuario {
     private LocalDate fechaNacimiento;
 
     @Email
+    @jakarta.persistence.Column(unique = true)
     private String correo;
-    @JsonProperty
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String clave;
     private Rol rol;
 
