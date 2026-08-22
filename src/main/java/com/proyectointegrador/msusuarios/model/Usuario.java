@@ -1,5 +1,6 @@
 package com.proyectointegrador.msusuarios.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -31,7 +32,7 @@ public class Usuario {
 
     @Email
     private String correo;
-
+    @JsonIgnore
     private String clave;
     private Rol rol;
 
