@@ -1,4 +1,4 @@
-package validation;
+package com.proyectointegrador.msusuarios.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

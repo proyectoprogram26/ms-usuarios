@@ -4,9 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
-import validation.CelularValido;
-import validation.DocumentoValido;
-import validation.MayorDeEdad;
+import com.proyectointegrador.msusuarios.validation.CelularValido;
+import com.proyectointegrador.msusuarios.validation.DocumentoValido;
+import com.proyectointegrador.msusuarios.validation.MayorDeEdad;
 
 import java.time.LocalDate;
 
