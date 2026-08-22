@@ -30,4 +30,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuario.setRol(Rol.PROPIETARIO);
         return usuarioRepository.save(usuario);
     }
+
+    @Override
+    public Usuario buscarPorId(Long id) {
+        return usuarioRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado"));
+    }
 }
