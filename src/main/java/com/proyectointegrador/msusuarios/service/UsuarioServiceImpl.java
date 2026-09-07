@@ -6,6 +6,8 @@ import com.proyectointegrador.msusuarios.repository.UsuarioRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
 
@@ -29,5 +31,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         usuario.setClave(claveEncriptada);
         usuario.setRol(Rol.PROPIETARIO);
         return usuarioRepository.save(usuario);
+    }
+
+    @Override
+    public Optional<Usuario> buscarPorId(Long id) {
+        return usuarioRepository.findById(id);
     }
 }
